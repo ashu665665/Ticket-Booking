@@ -1,0 +1,26 @@
+server:
+  port: 9999
+
+eureka:
+  instance:
+    hostname: localhost
+
+
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    discovery:
+      enabled=true:
+    gateway:
+      routes:
+        - id: register-login-service
+          uri: http://localhost:8585
+          predicates:
+            - Path=/user/**
+
+        - id: train-details-service
+          uri: http://localhost:8558
+          predicates:
+              - Path=/train/**

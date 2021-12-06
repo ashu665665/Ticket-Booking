@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: train-details-service
+
+eureka:
+  instance:
+    hostname: localhost
